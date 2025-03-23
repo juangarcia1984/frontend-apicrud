@@ -22,7 +22,7 @@ let getdata = ()=>{
         userinput.value = "";
         passinput.value = "";
     }else{
-        alert("INGRESE LOS DATOS CORRECTAMENTEr");
+        alert("INGRESE LOS DATOS CORRECTAMENTE");
     }
     return user;
  };
@@ -38,8 +38,16 @@ let getdata = ()=>{
             },
             body: JSON.stringify(data)
         });
-        let userlogin = await respuesta.json();
-        console.log(userlogin)      
+        if(respuesta.status === 401){
+            alert("USUARIO Y/O CONTRASEÑA INCORRECTA")
+        }else{
+            let userlogin = await respuesta.json();
+        alert("CREDENCIALES CORRECTAS");
+        //guardar datos en locastorage
+        localStorage.setItem("userlogin", JSON.stringify(userlogin))
+        location.href = "../index.html";
+        }
+              
     } catch (error) {
         console.log(error);  
     }
