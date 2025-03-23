@@ -261,7 +261,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span id="nombre-usuario" class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -281,7 +281,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <button id="btnlogout" class="dropdown-item" type="button" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -347,6 +347,7 @@
                               
                                 <!-- Submit button -->
                                 <button data-mdb-ripple-init type="button" class=" btn-create btn btn-primary btn-block mb-4">Crear Producto</button>
+                                <button data-mdb-ripple-init type="button" class=" d-none btn-update btn btn-primary btn-block mb-4">Actualizar Producto</button>
                             </form>
                         </div>
                         <div class="col-5">
